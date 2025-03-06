@@ -14,12 +14,7 @@ export const Header = () => {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className="link"
-      onClick={(event) => event.preventDefault()}
-    >
+    <a key={link.label} href={link.link} className="link">
       {link.label}
     </a>
   ));

@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { LeaderboardRequest, LeaderboardResponse } from "./typings";
 
 const apiClient = axios.create({
@@ -10,9 +10,10 @@ const apiClient = axios.create({
 
 export const getRankings = async (
   request: LeaderboardRequest
-): Promise<AxiosResponse<LeaderboardResponse, any>> => {
-  return await apiClient.get<LeaderboardResponse>(
-    "/community/leaderboard/getLeaderBoard2",
-    { params: request }
-  );
+): Promise<LeaderboardResponse> => {
+  return await apiClient
+    .get<LeaderboardResponse>("/community/leaderboard/getLeaderBoard2", {
+      params: request,
+    })
+    .then((response) => response.data);
 };

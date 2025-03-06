@@ -10,6 +10,7 @@ export interface LeaderboardRequest {
 export interface LeaderboardResponse {
   result: Result;
   statGroups: StatGroup[];
+  leaderboardStats: RankingDetails[];
 }
 
 export interface Result {
@@ -34,3 +35,23 @@ export interface Member {
   leaderboardregion_id: number;
   country: string;
 }
+
+export type RankingDetails = {
+  statgroup_id: number;
+  leaderboard_id: number;
+  wins: number;
+  losses: number;
+  streak: number;
+  disputes: number;
+  drops: number;
+  rank: number;
+  ranktotal: number;
+  ranklevel: number;
+  rating: number;
+  regionrank: number;
+  regionranktotal: number;
+  lastmatchdate: number;
+  highestrank: number;
+  highestranklevel: number;
+  highestrating: number;
+};
